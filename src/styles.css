@@ -1,0 +1,28 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.canvas {
+  background-color: gray;
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  margin: 20px;
+  cursor: crosshair;
+}
+
+.drawing {
+  border: 2px solid #8ef5f1;
+  opacity: 0.3;
+  position: absolute;
+  cursor: crosshair;
+}
+
+.rectangle {
+  border: 1px yellow;
+  background-color: yellow;
+  opacity: 0.3;
+  position: absolute;
+  cursor: crosshair;
+}
