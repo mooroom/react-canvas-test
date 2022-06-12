@@ -56,17 +56,18 @@ const App = () => {
     const mouseY = event.clientY - clientCoordinates.current.top;
     const width = mouseX - lastMouseX;
     const height = mouseY - lastMouseY;
-    console.log(mouseX, mouseY, width, height);
+    // console.log(mouseX, mouseY, width, height);
     setDrawing({
       x: lastMouseX,
       y: lastMouseY,
       width: width,
       height: height,
     });
-    console.log(drawing);
+    // console.log(drawing);
   };
 
   const handleMouseUp = (event: React.MouseEvent) => {
+    console.log("mouse up!");
     isMouseDown.current = false;
     const lastMouseX = drawing.x;
     const lastMouseY = drawing.y;
@@ -114,6 +115,13 @@ const App = () => {
         <div
           key={highlight.id}
           className="rectangle"
+          onClick={(e) => {
+            e.persist();
+            e.nativeEvent.stopImmediatePropagation();
+            e.stopPropagation();
+
+            console.log(e.target);
+          }}
           style={{
             left: highlight.x,
             top: highlight.y,
